@@ -1,0 +1,78 @@
+:root {
+    --primary: #008080;
+    --bg: #f0f4f4;
+    --card: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    margin: 0; padding: 20px;
+}
+
+.header h1 { color: var(--primary); margin-bottom: 5px; }
+
+.task-card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 15px;
+    border-left: 8px solid var(--primary);
+}
+
+.task-card h2 { margin: 0; font-size: 1.2rem; }
+.task-card p { color: #666; margin: 5px 0; }
+
+.add-btn {
+    position: fixed; bottom: 30px; right: 30px;
+    background: var(--primary); color: white;
+    width: 65px; height: 65px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 35px; box-shadow: 0 8px 20px rgba(0,128,128,0.3);
+}
+
+/* Modal styling */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+.modal-content { background: white; margin: 20% auto; padding: 25px; width: 80%; border-radius: 25px; }
+input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; }
+button { width: 100%; padding: 12px; background: var(--primary); color: white; border: none; border-radius: 10px; margin-top: 10px; }
+.cancel { background: #ccc; }
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    background: #dcdde1;
+    color: #2f3542;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    width: auto; /* Overrides the previous 100% width */
+}
+
+.tabs button.active {
+    background: var(--primary);
+    color: white;
+}
+input[type="date"] {
+    position: relative;
+    color: #2f3542;
+    min-height: 55px; /* Ensures the box isn't thin */
+}
+
+/* This adds a "Select Date" text if the box is empty on some phones */
+input[type="date"]:before {
+    content: attr(placeholder);
+    width: 100%;
+    color: #a4b0be;
+}
+
+input[type="date"]:focus:before,
+input[type="date"]:valid:before {
+    content: "";
+}
